@@ -1,4 +1,4 @@
-name: Ping SmartNotes
+name: Ping Service
 
 # Schedule: every 5 minutes
 on:
