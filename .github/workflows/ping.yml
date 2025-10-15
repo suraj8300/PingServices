@@ -1,0 +1,14 @@
+name: Ping SmartNotes
+
+# Schedule: every 5 minutes
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # every 5 min
+  workflow_dispatch:  # optional manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping App
+        run: curl https://sunmoonhaze.onrender.com
