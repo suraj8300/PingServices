@@ -11,4 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping App
-        run: curl https://sunmoonhaze.onrender.com
+        run: |
+          URLS=(
+            "https://sunmoonhaze.onrender.com"
+            "https://google.com"
+          )
+
+          for url in "${URLS[@]}"; do
+            echo "Pinging $url..."
+            curl -Is --max-time 10 "$url" | head -n 1
+            echo ""
+          done
